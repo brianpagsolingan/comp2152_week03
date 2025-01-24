@@ -19,3 +19,16 @@ mCombatStrength = getCombatStrength("Please enter a number between 1 - 6 monster
 for i in range(1, 21 ,21):
     heroRoll = random.choice(diceOptions)
     monsterRoll = random.choice(diceOptions)
+
+    heroWeapon = weapons[heroRoll - 1]
+    monsterWeapon = weapons[monsterRoll - 1]
+
+    heroTotal = combatStrength + heroRoll
+    monsterTotal = mCombatStrength + monsterRoll
+
+    if heroTotal > monsterTotal:
+        print("Player wins")
+    elif monsterTotal > heroTotal:
+        print("Monster wins")
+    else:
+        print("Tie")
